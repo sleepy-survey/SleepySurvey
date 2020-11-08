@@ -74,6 +74,21 @@ const Experiment = () => {
                     break;
                 }
             }
+            if (highest === 10) {
+                bidPrices[(images[counter].split('/')[3]).split('.')[0]] = highest
+                console.log(highest)
+                setYesArray([null, null, null, null, null, null, null, null, null, null, null]);
+                setFirstChoice(null)
+                if ((counter + 1) < images.length) {
+                    setCounter(counter + 1)
+                    setReady(0)
+                } else {
+                    var jsonBid =   JSON.stringify(bidPrices)
+                    console.log(jsonBid)
+                    history.push({pathname: '/EndOne', data: {id: location.data.id, hoursAgo: location.data.hoursAgo, hungerLevel: location.data.hungerLevel, secondHungerLevel: location.data.secondHungerLevel, bidPrices: jsonBid}})
+                }
+                return
+            }
             setFirstChoice(highest);
             setYesArray([null, null, null, null, null, null, null, null, null, null, null]);
         }
@@ -352,18 +367,18 @@ const Experiment = () => {
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <label>{(images[counter].split('/')[3]).split('.')[0]}</label><input type="radio" onClick={() => choosingItemOne(8)} checked={yesArray[8] === 0} name="yes_no_28"></input>
+                                    <label>{(images[counter].split('/')[3]).split('.')[0]}</label><input type="radio" onClick={() => choosingItemTwo(8)} checked={yesArray[8] === 0} name="yes_no_28"></input>
                                 </div>
                                 <div className="col">
-                                    <label>${firstChoice}.80</label><input type="radio" onClick={() => choosingMoneyOne(8, 0.80)} checked={yesArray[8]} name="yes_no_28"></input>
+                                    <label>${firstChoice}.80</label><input type="radio" onClick={() => choosingMoneyTwo(8, 0.80)} checked={yesArray[8]} name="yes_no_28"></input>
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="col">
-                                    <label>{(images[counter].split('/')[3]).split('.')[0]}</label><input type="radio" onClick={() => choosingItemOne(9)} checked={yesArray[9] === 0} name="yes_no_29"></input>
+                                    <label>{(images[counter].split('/')[3]).split('.')[0]}</label><input type="radio" onClick={() => choosingItemTwo(9)} checked={yesArray[9] === 0} name="yes_no_29"></input>
                                 </div>
                                 <div className="col">
-                                    <label>${firstChoice}.90</label><input type="radio" onClick={() => choosingMoneyOne(9, 0.90)} checked={yesArray[9]} name="yes_no_29"></input>
+                                    <label>${firstChoice}.90</label><input type="radio" onClick={() => choosingMoneyTwo(9, 0.90)} checked={yesArray[9]} name="yes_no_29"></input>
                                 </div>
                             </div>
                         </div>
