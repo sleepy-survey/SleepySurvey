@@ -184,19 +184,22 @@ const Experiment = () => {
         <div style={{fontSize: 20}}>
             {
                 ready === 0 ? 
-                <div style={{textAlign: "center"}}>
+                <div style={{textAlign: "center", marginTop: "5%"}}>
                     The image below is a {(images[counter].split('/')[3]).split('.')[0]}. The experimenters will be passing around this item for you to see.
                     Please proceed when you are ready with your decision
                     <br></br>
+                    <br></br>
                     <img style={{height: 500, width: 500}} alt="bidImage" src={images[counter]}/>
+                    <br></br>
                     <br></br>
                     <button onClick={() => setReady(1)}>Ready</button>
                 </div> : 
                 <div>
                     {
                         firstChoice === null ?
-                        <div style={{textAlign: "center"}}>
+                        <div style={{textAlign: "center", marginTop: "5%"}}>
                             For each of the rows, choose which option you prefer? ({(images[counter].split('/')[3]).split('.')[0]})
+                            <br></br>
                             <br></br>
                             <div style={{marginLeft: "30%"}}>
                                 <div className="row">
@@ -297,11 +300,13 @@ const Experiment = () => {
                                 </div>
                             </div>
                             {/*  */}
+                            <br></br>
                             <button style={{fontSize: 20}} onClick={() => nextLevel()}>Next</button>
                         </div> 
                         :
                         <div style={{textAlign: "center"}}>
                         For each of the rows, choose which option you prefer? ({(images[counter].split('/')[3]).split('.')[0]})
+                        <br></br>
                         <br></br>
                         <div style={{marginLeft: "30%"}}>
                             <div className="row">
@@ -385,6 +390,7 @@ const Experiment = () => {
                                 </div>
                             </div>
                         </div>
+                        <br></br>
                         <button style={{fontSize: 20}} onClick={() => addToJson()}>Next</button>
                         </div>
                     }
