@@ -1,3 +1,3 @@
 export const random = {
-    "50g Snickers Bar": 4.50,
+    "Bag of 6 Apples": 4.50,
 };
