@@ -160,6 +160,9 @@ const Experiment = () => {
                     break;
                 }
             }
+            if (highest % 1 === 0) {
+                highest = temp[1]
+            }
             let rounded_highest = (Math.round(highest * 10) / 10)
             console.log(rounded_highest);
             bidPrices[(images[counter].split('/')[3]).split('.')[0]] = rounded_highest
