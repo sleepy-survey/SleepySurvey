@@ -65,7 +65,7 @@ const End = () => {
     }
 
     return (
-        <div>
+        <div style={{marginTop: "10%"}}>
             { state === false ? 
             <div>
                 <h1 style={{textAlign: "center"}}>End of Experiment</h1>
