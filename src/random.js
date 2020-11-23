@@ -1,3 +1,3 @@
 export const random = {
-    "2 x 130g Prawn Crackers": 7.30,
+    "1 box of Apollo Blueberry Layer Cake (24 packets)": 7.30,
 };
